@@ -1,0 +1,51 @@
+<% layout('/layouts/boilerplate') -%>
+<body>
+    <br>
+    <H2>EDTI THIS ROUTE</H2>
+    <form method="post" action="/listings/<%= data._id %>?_method=PATCH" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-8 offset-2">
+            <form method="post" action="/listings">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" name="listing[title]" id="title" class="form-control" value="<%=data.title%>" required>
+                </div>
+        
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea name="listing[description]" class="form-control" required><%=data.description%></textarea> 
+                </div>
+
+                <div class="mb-3">
+                    <img src="<%=originalImageURL%>">
+                </div>
+        
+               <div class="mb-3">
+            <label for="image" class="form-label">Upload Image</label>
+            <input type="file" name="listing[image]" class="form-control" placeholder="Add imlage link/url">
+        </div>
+                
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="number" name="listing[price]" class="form-control" value="<%=data.price%>" required> 
+                    </div>
+            
+                    <div class="mb-3 col-md-8">
+                        <label for="price" class="form-label">Location</label>
+                        <input type="text" name="listing[location]" class="form-control" value="<%=data.location%>" required> 
+                    </div>
+                   
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Country</label>
+                        <input type="text" name="listing[country]" class="form-control"  value="<%=data.country%>" required> 
+                    </div>
+                </div>
+               <button class="btn btn-dark edit-btn">ADD</button>
+            </form>
+            <br><br>
+        </div>
+        </div>
+
+      
+</body>
